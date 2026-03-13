@@ -20,5 +20,7 @@ logger.info("Training parameters: batch size={}, epochs={}", batch_size, epochs)
 model = YOLO("yolo26n.pt") 
 # Train the model
 logger.info("Starting training")
-results = model.train(data=training_data, epochs=epochs,  batch=batch_size, imgsz=640,device=[-1, -1])
+results = model.train(data=training_data, epochs=epochs,  batch=batch_size, imgsz=1024,device=[-1, -1])
 logger.info("Training complete: {}", results)
+validation_results = model.val(data=training_data)
+logger.info("Validation results: {}", validation_results)
