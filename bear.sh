@@ -31,6 +31,7 @@ source ${VENV_PATH}/bin/activate
 #not sure this matters given I'm using uv
 PIP_CACHE_DIR="/scratch/${USER}/pip"
 
+cd /rds/homes/m/morriscz/beartraining
 uv sync
 EXPORT training_data_path="/rds/homes/m/morriscz/custom/custom.yaml"
 #these have to be significantly smalleron my local machine to avoid OOM errors, but I can increase them on bluebear
