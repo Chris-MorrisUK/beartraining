@@ -1,0 +1,13 @@
+[project]
+name = "training"
+version = "0.1.0"
+description = "Train a YOLO Model"
+authors = [
+{name = "Chris Morris", email = "c.morris.1@bham.ac.uk"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ultralytics-opencv-headless==8.4.21",
+    "loguru>=0.7.3"
+]
