@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --ntasks=4
-#SBATCH --time=240:0
+#SBATCH --ntasks=32
+#SBATCH --time=3:00:00
 #SBATCH --qos=bbgpu
 #SBATCH --account=morriscz-sch-plan-digit
 #SBATCH --gres=gpu:a100:2
@@ -19,7 +19,7 @@ uv sync
 #these parameter control the training
 export training_data_path="/rds/homes/m/morriscz/custom/custom.yaml"
 #these have to be significantly smalleron my local machine to avoid OOM errors, but I can increase them on bluebear
-export BATCH_SIZE=32
+export BATCH_SIZE=4
 export EPOCHS=100
 uv run train.py
 
